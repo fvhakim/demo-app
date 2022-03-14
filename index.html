@@ -1,0 +1,123 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Fady Hakim demo</title>
+
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="pricing.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+</svg>
+
+<div class="container py-3">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/coder-2530526-2118191.png" style="max-width: 54px;">
+        <span class="fs-4">FHakim</span>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="/">Home</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="/getmessage?msg=Welcome to my demo, enter any value you want in the header">Message</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="/getusers">Users</a>
+      </nav>
+    </div>
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Fady Hakim's Cloudflare Demo</h1>
+      <p class="fs-5 text-muted">Welcome to my demo space, Please check below for more details. Thank you! </p>
+    </div>
+  </header>
+
+  <main>
+  
+
+    <div class="table-responsive">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th style="width: 20%;"></th>
+            <th style="width: 80%;">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Home page</th>
+            <td>To access home page: <a href="https://fhakim-cloudflare-demo.com/">https://fhakim-cloudflare-demo.com/</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Message page</th>
+            <td>Message page will display the result of a GET request for a webservice that will return the text value of 'msg' variable in the request, for example: <a href="https://fhakim-cloudflare-demo.com/getmessage?msg=Welcome to my demo">https://fhakim-cloudflare-demo.com/getmessage?msg=Welcome to my demo</a></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Users page</th>
+            <td>'Users page' path is secured by cloudflare through lock down access for only authenticated users and will display the result of GET request to return all the users from USERS JSON object: <a href="https://fhakim-cloudflare-demo.com/getusers">https://fhakim-cloudflare-demo.com/getusers</a> </td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">'/getheaders' post request</th>
+            <td> 
+              a post request to '/getheaders' will return all headers in the request, including any added ones, for example:<br>
+              curl --location --request POST 'https://fhakim-cloudflare-demo.com/getheaders' \<br>
+              --header 'name: fhakim-cloudflare'
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row" class="text-start">Test curl request #1</th>
+            <td>Test cloudflare  worker script that redirect to "https://developers.cloudflare.com/" for any CURL requests for 'https://fhakim-cloudflare-demo.com/' : for example:  curl -I 'https://fhakim-cloudflare-demo.com/' (the response header will have the redirect URL and status code 302)</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Test curl request #2</th>
+            <td>Test cloudflare  worker script that won't redirect based on CURL request with "cf-noredir=yes" cookie in the request for 'https://fhakim-cloudflare-demo.com/': for example:  curl -I --cookie "cf-noredir=yes" 'https://fhakim-cloudflare-demo.com/'  (in the response header, no redirect and status code 200)</td>
+        
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  
+</div>
+
+
+    
+  </body>
+</html>
